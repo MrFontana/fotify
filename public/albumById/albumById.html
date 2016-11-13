@@ -1,0 +1,44 @@
+<div class="playlistByIdContainer">
+
+    <!-- HEADER CONTAINS FILTER, IMG, NAME, THE AMOUNT OF FOLLOWERS AND THE USER -->
+    <div class="playlistHeader">
+        <!-- make a new styling for all this, centered -->
+
+        <!-- get filter from playlist filter -->
+        <div class="searchInputsContainer">
+          <input class='searchTextBox filterInput' type="text" name="name" ng-model="songFilter" placeholder="Filter">
+        </div>
+
+        <div class="imgNameDiv">
+          <div class="playlistImgDiv">
+              <img ng-src="{{albumImg}}"/>
+
+          </div>
+
+            <div class="playlistName">
+                <!-- centered under img -->
+                <p class="playlistNameText">{{albumName}}</p>
+                <p class='playlistNameText backup' ui-sref='search'>
+                  Back To Search
+                </p>
+            </div>
+
+              <div class="followersUserName">
+                  <!-- typeColor -->
+
+              </div>
+            </div>
+          </div>
+
+  <div class="tracks">
+      <div class="songResult" ng-repeat="song in tracks | filter: songFilter">
+          <h1 id="favoritePlus" ng-click="addFavorite($event, song.id)">+</h1><div id="playlistSongName">
+            <h2 ng-click="preview($index)">{{song.name}}</h2>
+            <h5 class='typeColor'>{{song.artists[0].name}}</h5>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>

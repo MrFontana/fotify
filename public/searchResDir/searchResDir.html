@@ -1,0 +1,103 @@
+<!-- Top result displays most popular artist by search -->
+<div class="container" ng-show="{{artists}}">
+  <h2 id="searchHeader">Top Result</h2>
+    <div class="topResult">
+      <div id="artistPicture">
+        <img ng-src="{{artists[0].images[2].url}}" alt="{{artists[0].name}}"/>
+      </div>
+      <div id="artistName">
+        <h2>{{artists[0].name}}</h2>
+        <h5 class='typeColor'>{{artists[0].type}}</h5>
+      </div>
+      <!-- <h2 id="artistName">{{artists[0].name}}</h2> -->
+  </div>
+
+<!-- albums display as carousel -->
+
+  <h1 id="searchHeader">Albums</h1>
+    <div class="albumsDiv">
+
+        <div class="carousel" id="album-carousel">
+
+          <div class="item" ng-repeat='album in albums'>
+            <div>
+              <img ng-src='{{album.images[0].url}}' ui-sref="album({id: album.id})"/>
+
+              <div class="albumName">
+                <h4>{{album.name}}</h4>
+              </div>
+
+            </div>
+          </div>
+
+       </div>
+
+  </div>
+
+<!-- TRACKS DIV -->
+
+<h1 id='searchHeader'>Songs</h1>
+<div class="tracks">
+  <div class="topResult" ng-repeat="track in tracks track by $index" ng-if="$index < trackLimit">
+      <h1 id="favoritePlus" ng-click="addFavorite($event, track.id)">+</h1><div id="artistName">
+        <h2 ng-click="preview($index)">{{track.name}}</h2>
+        <h5 class='typeColor'>{{track.artists[0].name}} - {{track.album.name}}</h5>
+    </div>
+  </div>
+  <button class='seeAllTracks' ng-click='trackLimit = 20' type="button" name="button" ng-show="trackLimit < 20">See all tracks</button>
+  <button class='seeAllTracks' ng:click='trackLimit = 4' type="button" name="button" ng-show="trackLimit > 4">See less tracks</button>
+</div>
+
+<h1 id="searchHeader">Artists</h1>
+<div class="otherArtists">
+
+    <div class="topResult" ng-repeat='artist in artists track by $index' ng-if="$index < artistLimit">
+        <div id="artistPicture">
+            <img ng-src="{{artist.images[2].url}}" alt="{{artist.name}}"/>
+          </div>
+        <h3 id="artistName">{{artist.name}}</h3>
+    </div>
+    <button class='seeAllArtists' ng-click='artistLimit = 20' type="button" name="button" ng-show="artistLimit < 20">See all artists</button>
+    <button class='seeAllArtists' ng-click='artistLimit = 4' type="button" name="button" ng-show="artistLimit > 4">See less artists</button>
+</div>
+
+
+<h1 id="searchHeader">Featuring</h1>
+<div class="otherArtists">
+
+    <div class="topResult" ng-repeat='album in albums track by $index' ng-if='$index < featureLimit'>
+        <div id="artistPicture">
+            <img ng-src="{{album.images[0].url}}" />
+          </div>
+        <div id="artistName">
+          <h2>{{album.name}}</h2>
+          <h5 class='typeColor'>{{artist[0].name}}</h5>
+        </div>
+    </div>
+    <button class='seeAllArtists' ng-click='featureLimit = 20' type="button" name="button" ng-show="featureLimit < 20">See all featured</button>
+    <button class='seeAllArtists' ng-click='featureLimit = 4' type="button" name="button" ng-show="featureLimit > 4">See less featured</button>
+</div>
+
+<h1 id="searchHeader">Playlists</h1>
+  <div class="albumsDiv">
+
+      <div class="carousel" id="playlist-carousel">
+
+        <div class="item" ng-repeat='playlist in playlists'>
+          <div>
+            <img ui-sref="playlist({user_id: playlist.owner.id, id: playlist.id})" ng-src='{{playlist.images[0].url}}' />
+
+            <div class="albumName">
+              <h4>{{playlist.name}}</h4>
+            </div>
+
+          </div>
+        </div>
+
+     </div>
+
+
+</div>
+
+
+</div>

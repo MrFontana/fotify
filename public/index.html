@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app='fotify'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/owl.carousel.css">
+    <link rel="stylesheet" href="./styles/owl.theme.css">
+
+
+
+    <title>Fotify</title>
+  </head>
+  <body ng-controller="masterCtrl">
+    <div class="container">
+      <div id="sidebar">
+          <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#" ui-sref='search' data-toggle=".container">Search</a></li>
+              <li><a href="#" ui-sref='home'data-toggle=".container">Home</a></li>
+              <li><a href="#" ui-sref='browse'data-toggle=".container">Browse</a></li>
+              <li><a href="#" ui-sref='radio'data-toggle=".container">Radio</a></li>
+              <li><a href="#" ui-sref='yourlibrary'data-toggle=".container">Your Library<a></li>
+              <li><a href='/auth/spotify' data-toggle=".container">Login<a></li>
+          </ul>
+      </div>
+      <div class="main-content">
+          <button data-toggle=".container" id="sidebar-toggle">
+            <div class="menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <div class="title">
+              <!-- State name -->
+              {{stateName}}
+            </div>
+          </button>
+      </div>
+    </div>
+
+    <ui-view></ui-view>
+
+
+    <script src=
+      'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js'>
+    </script>
+    <script src=
+      "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js">
+    </script>
+    <script src=
+      "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js">
+      </script>
+
+      <script src="./js/owl.carousel/owl-carousel/owl.carousel.js"></script>
+      <script src="./js/angular.audio.js"></script>
+
+
+      <script src="./js/app.js"></script>
+      <script src="./js/jQuery.js"></script>
+
+      <!-- Services -->
+      <script src="./home/homeSrvc.js"></script>
+      <script src="./search/searchSrvc.js"></script>
+      <script src="./playlists/playlistsSrvc.js"></script>
+      <script src="./albumById/albumByIdSrvc.js"></script>
+      <script src="./playlistById/playlistByIdSrvc.js"></script>
+
+      <!-- Controllers -->
+      <script src="./masterCtrl.js"></script>
+      <script src="./home/homeCtrl.js"></script>
+      <script src="./browse/browseCtrl.js"></script>
+      <script src="./radio/radioCtrl.js"></script>
+      <script src="./search/searchCtrl.js"></script>
+      <script src="./settings/settingsCtrl.js"></script>
+      <script src="./yourLibrary/yourLibraryCtrl.js"></script>
+      <script src="./login/loginCtrl.js"></script>
+      <script src="./searchResDir/searchResDirCtrl.js"></script>
+      <script src="./yourLibraryDir/yourLibraryDirCtrl.js"></script>
+      <script src="./playlists/playlistsCtrl.js"></script>
+      <script src="./playlistById/playlistByIdCtrl.js"></script>
+      <script src="./albumById/albumByIdCtrl.js"></script>
+
+      <!-- Directives -->
+      <script src="./searchResDir/searchResDir.js"></script>
+      <script src="./yourLibraryDir/yourLibraryDir.js"></script>
+  </body>
+</html>

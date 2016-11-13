@@ -1,0 +1,18 @@
+<!-- <div class="header">
+  <div class="stateHeader">
+    HOME
+  </div>
+</div> -->
+<div class="carousel-container">
+  {{home}}
+</div>
+
+<input type="text" name="name" value="" ng-model="searchText">
+<button type="button" name="button" ng-click="searchArtist(searchText)">Search</button>
+
+<button type="button" name="button" ng-click="getPlaylists()">Get Kevin's Playlists</button>
+
+
+<div ng-repeat="playlist in playlists">
+  <img ng-src="{{playlist.images[1].url}}" alt="" />
+</div>

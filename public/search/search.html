@@ -1,0 +1,15 @@
+<div class="searchContainer">
+
+
+  <!-- SEARCH BAR -->
+  <div class="searchInputsContainer">
+    <form ng-submit="searchArtist(searchText)">
+      <input class='searchTextBox' type="text" name="name" ng-model="searchText" placeholder="Search">
+    </form>
+
+  </div>
+
+  <search-res-dir albums='albums' artists="artists" tracks='tracks' playlists='playlists' ng-if="refresh"></search-res-dir>
+
+  <!-- <h1 ng-repeat="artist in artists">{{artist.name}}</h1> -->
+</div>

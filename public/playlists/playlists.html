@@ -1,0 +1,62 @@
+<div class="playlistContainer">
+
+<!-- FILTER BAR  -->
+
+<div class="searchInputsContainer">
+    <input class='searchTextBox filterInput' type="text" name="name" ng-model="playlistFilter" placeholder="Filter">
+
+
+<!-- PLAYLIST DISPLAY -->
+
+<!-- <div id='playlistHeader'>
+  <h1>Playlists</h1>
+</div> -->
+
+<div class="playlistDisplay">
+  <div class="topResult" ng-repeat='playlist in playlists | filter: playlistFilter' ng-if="$index < playlistLimit" ui-sref="playlist({user_id: playlist.owner.id, id: playlist.id})">
+    <div id="playlistPicture">
+      <img ng-src="{{playlist.images[0].url}}"/>
+    </div>
+      <div id="playlistName">
+        <h2>{{playlist.name}}</h2>
+          <!-- SOME OF THE INFO IS SMUSHED TOGETHER, ADJUSTING LINE HEIGHT TO NORMAL FIXES THIS. CANT FIND ANOTHER SOLUTION AT THIS TIME -->
+        <h5 class='typeColor'>songs {{playlist.tracks.total}} </h5>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>
+
+<!-- code in case i mess everything up
+
+<div class="playlistContainer"> -->
+
+<!-- FILTER BAR  -->
+<!--
+<div class="searchInputsContainer">
+  <form ng-submit="searchArtist(searchText)">
+    <input class='searchTextBox' type="text" name="name" ng-model="searchText" placeholder="Filter...">
+  </form> -->
+
+<!-- PLAYLIST DISPLAY -->
+<!--
+<h1 id='searchHeader'>Playlists</h1>
+<div class="tracks">
+  <div class="topResult" ng-repeat='playlist in playlists'>
+    <div id="playlistPicture">
+      <img ng-src="{{playlist.images[0].url}}"/>
+    </div>
+      <div id="artistName">
+        <h2>{{playlist.name}}</h2> -->
+          <!-- SOME OF THE INFO IS SMUSHED TOGETHER, ADJUSTING LINE HEIGHT TO NORMAL FIXES THIS. CANT FIND ANOTHER SOLUTION AT THIS TIME -->
+        <!-- <h5 class='typeColor'>songs {{playlist.tracks.total}} </h5>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div> -->
